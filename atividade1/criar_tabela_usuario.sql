@@ -1,10 +1,13 @@
-DROP DATABASE biblioteca_pessoal_1s2026;
-CREATE DATABASE biblioteca_pessoal_1s2026;
-USE biblioteca_pessoal_1s2026;
-
+/*1. Criando a tabela usuario*/
 CREATE TABLE usuario(
 	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(128) NOT NULL UNIQUE,
     data_cadastro DATE DEFAULT(CURRENT_DATE) NOT NULL
 );
+
+/*2. AJUSTANDO COLUNAS*/
+ALTER TABLE usuario MODIFY nome VARCHAR(255) NOT NULL;
+ALTER TABLE usuario ADD COLUMN data_atualizacao TIMESTAMP NOT NULL;
+
+DESC usuario;

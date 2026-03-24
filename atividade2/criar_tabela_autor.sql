@@ -1,3 +1,4 @@
+/*1. Criando a tabela autor*/
 CREATE TABLE autor (
 	id_autor INT AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(128) NOT NULL,
@@ -6,4 +7,8 @@ CREATE TABLE autor (
     data_cadastro TIMESTAMP,
     data_atualizacao TIMESTAMP
 );
-SHOW TABLES;
+/*2. AJUSTANDO COLUNAS*/
+ALTER TABLE autor ADD ano_morte YEAR NOT NULL;
+ALTER TABLE autor MODIFY nome VARCHAR(128) UNIQUE NOT NULL;
+
+DESC autor;
