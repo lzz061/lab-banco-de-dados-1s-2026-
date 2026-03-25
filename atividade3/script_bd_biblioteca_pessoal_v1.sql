@@ -7,8 +7,8 @@ CREATE TABLE usuario(
 	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(128) NOT NULL UNIQUE,
-    data_cadastro TIMESTAMP NOT NULL,
-    data_atualização TIMESTAMP NOT NULL
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_atualização TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 /*3.Criando tabela categoria*/
@@ -16,8 +16,8 @@ CREATE TABLE categoria (
 	id_categoria INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(128) UNIQUE NOT NULL,
     descricao TEXT,
-    data_cadastro TIMESTAMP,
-    data_atualizacao TIMESTAMP
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_atualização TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 /*4.Criando tabela autor*/
