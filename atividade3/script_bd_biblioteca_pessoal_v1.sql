@@ -25,8 +25,8 @@ CREATE TABLE categoria (
 CREATE TABLE autor (
 	id_autor INT AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(128) NOT NULL UNIQUE,
-    ano_nascimento YEAR,
-    ano_morte YEAR,
+    ano_nascimento INT,
+    ano_morte INT,
     apresentacao TEXT,
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -36,9 +36,9 @@ CREATE TABLE autor (
 CREATE TABLE editora (
 	id_editora INT AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(255) UNIQUE,
-    cidade VARCHAR(64) NOT NULL,
-    estado VARCHAR(64) NOT NULL,
-	pais VARCHAR(64) NOT NULL,
+    cidade VARCHAR(64),
+    estado VARCHAR(64),
+	pais VARCHAR(64),
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -52,7 +52,7 @@ CREATE TABLE livro(
     id_categoria INT,
     titulo VARCHAR(255) NOT NULL,
     sinopse TEXT,
-    ano_publicacao YEAR,
+    ano_publicacao INT,
     lido BOOLEAN DEFAULT (0),
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
